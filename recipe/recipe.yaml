@@ -16,7 +16,11 @@ build:
     - cd src
     - go-licenses save ./cmd/pinact --save_path ../library_licenses
     - if: unix
-      then: go build -v -o $PREFIX/bin/pinact -ldflags="-s -w" ./cmd/pinact
+      then: |
+        if [[ "$target_platform" == "osx-arm64" ]]; then
+          export GOARCH=arm64
+        fi
+        go build -v -o $PREFIX/bin/pinact -ldflags="-s -w" ./cmd/pinact
       else: go build -v -o %LIBRARY_BIN%\pinact.exe -ldflags="-s -w" ./cmd/pinact
 
 requirements:
