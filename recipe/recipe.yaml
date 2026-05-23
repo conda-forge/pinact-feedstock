@@ -1,5 +1,5 @@
 context:
-  version: "3.10.1"
+  version: "4.0.0-0"
 
 package:
   name: pinact
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/suzuki-shunsuke/pinact/archive/refs/tags/v${{ version }}.tar.gz
-  sha256: e2661031b43e5980af34ca323ed10f72112c056fc0c495424dcccdd85ab6db2f
+  sha256: e6c51872852212c8964a67f4191a645ea0788ffda3510e335224573598f69a59
   target_directory: src
 
 build:
